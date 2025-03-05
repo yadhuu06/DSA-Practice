@@ -23,7 +23,7 @@ class LinkedList:
     def display(self):
         temp = self.head
         while temp:
-            print(temp.val, end=" -> ")
+            print(temp.val, end="-")
             temp = temp.next
         print("None")  
 

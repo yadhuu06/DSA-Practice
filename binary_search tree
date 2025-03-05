@@ -1,0 +1,54 @@
+class binary:
+    def __init__(self,val):
+        self.value=val
+        self.left=None
+        self.right=None
+    def insert(self,new_val):
+        if self.value>new_val:
+            if self.left is not None:
+                
+                self.left.insert(new_val)
+            else:
+                self.left=binary(new_val)
+        
+        if self.value<new_val:
+            if self.right is not None:
+                
+                self.right.insert(new_val)
+            else:
+                self.right=binary(new_val)    
+    def inOrder(self):
+        if self.left :
+            self.left.inOrder()
+        print(self.value,end=" ")
+        if self.right:
+            self.right.inOrder()
+    def preorder(self):
+        print(self.value)
+        if self.left:
+            self.left.preorder()
+        if self.right:
+            self.right.preorder()
+    def postOrder(self):
+        if self.left:
+            self.left.postOrder()
+        if self.right:
+            self.right.postOrder()
+        print(self.value)
+     
+
+
+
+root =binary(10)
+root.insert(5)
+root.insert(15)
+root.insert(3)
+root.insert(7)
+
+root.inOrder()               
+
+            
+        
+    
+                
+        
